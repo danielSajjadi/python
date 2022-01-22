@@ -17,12 +17,10 @@ ball = Ball()
 
 scoreboard = Scoreboard()
 
-
+#add listener
 screen.listen()
-
 screen.onkey(r_paddle.go_up, "Up")
 screen.onkey(r_paddle.go_down, "Down")
-
 screen.onkey(l_paddle.go_up, "w")
 screen.onkey(l_paddle.go_down, "s")
 
@@ -38,10 +36,10 @@ while game_is_on:
         ball.bounce_y()
 
 
-    # collision with r_paddle
+    # collision with r_paddle or l_paddel
     if ball.distance(r_paddle) < 50 and ball.xcor() > 340 or ball.distance(l_paddle) < 50 and ball.xcor() < -340:
         ball.bounce_x()
-        time.sleep(0.1 * 0.1)
+        time.sleep(0.1 * 0.1) # to make the game speedy after every score
 
 
     # miss the ball
